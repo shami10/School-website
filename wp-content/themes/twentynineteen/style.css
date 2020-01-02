@@ -1,0 +1,833 @@
+@charset "UTF-8";
+/*
+Theme Name: Twenty Nineteen
+Theme URI: https://wordpress.org/themes/twentynineteen/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Our 2019 default theme is designed to show off the power of the block editor. It features custom styles for all the default blocks, and is built so that what you see in the editor looks like what you'll see on your website. Twenty Nineteen is designed to be adaptable to a wide range of websites, whether you’re running a photo blog, launching a new business, or supporting a non-profit. Featuring ample whitespace and modern sans-serif headlines paired with classic serif body text, it's built to be beautiful on all screen sizes.
+Requires at least: WordPress 4.9.6
+Version: 1.4
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: twentynineteen
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Twenty Nineteen is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Variables
+# Normalize
+# Typography
+	## Headings
+	## Copy
+# Elements
+	## Lists
+	## Tables
+# Forms
+	## Buttons
+	## Fields
+# Navigation
+	## Links
+	## Menus
+	## Next & Previous
+# Accessibility
+# Alignments
+# Clearings
+# Layout
+# Widgets
+# Content
+	## Archives
+	## Posts and pages
+	## Comments
+# Blocks
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+body{
+	margin: 0px;
+	padding: 0px;
+}
+h1,h2,h3,h4,h5,p,td,th,span,label,li,div,b{
+    user-select: none;
+}
+.top-header{
+	background-color: #0097f2;
+	margin: 0px;
+	padding: 1px;
+	height: 30px;
+}
+.top-ul-left {
+    margin: 0;
+}
+.top-ul-left li{
+	list-style: none;
+	float: left;
+	color: white;
+	padding-left: 20px;
+}
+.top-ul-right li{
+	list-style: none;
+	float: left;
+	color: white;
+	padding-left: 20px;
+}
+.top-ul-right{
+	float: right;
+	margin-right: 50px;
+}
+.top-ul-right a{
+	text-decoration: none;
+	color: white
+}
+.navbar-nav{
+    margin: auto;
+}
+.navbar-light{
+	width: 100%;
+}
+.navbar-brand img {
+    margin-left: 35px;
+    margin-right: 80px;
+}
+.nav-link {
+    font-size: 15px;
+    color: black !important;
+    font-weight: 500;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+.active-bar{
+	color: #3280c2 !important;
+	border-bottom: 2px solid #3280c2;
+}
+.nav-item {
+    margin: 0px 7px;
+}
+.nav-link:hover{
+	color: #3280c2 !important;
+}
+.bg-light {
+    background-color: #f4f8fb !important;
+    position: absolute;
+    top: 30px;
+    z-index: 9999999;
+}
+.carousel-inner img {
+	width: 100%;
+	height: 570px;
+	margin-top: 87px;
+}
+#deco-clouds1{
+	fill: #F3F0CF;
+    stroke: #F3F0CF;
+    position: absolute;
+    top: 605px;
+}
+.row{
+	margin: 0px !important;
+}
+.home-service{
+	background-color: #fff;
+	text-align: center;
+	padding: 100px 100px 50px 100px;
+}
+.home-service label {
+    background-color: #3282c2;
+    padding: 14px 45px;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 39px;
+    font-weight: 700;
+    margin-bottom: 70px;
+    box-shadow: 2px 2px 4px 0px black;
+}
+.about-img-abs {
+    width: 90%;
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    border: 10px solid #114e80;
+    border-radius: 250px;
+}
+.abo-text {
+    padding: 0px 20px;
+}
+.abo-text h2 {
+    font-size: 3.5vw;
+    letter-spacing: -1px;
+    font-weight: 800;
+    text-align: justify;
+    color: #114e80;
+    margin-bottom: 23px;
+}
+.abo-text p {
+    font-size: 16px;
+    text-align: justify;
+    color: #5f5a5a;
+}
+.abo-text button {
+    font-size: 18px;
+    background-color: #3282c2;
+    border: #3282c2;
+    font-weight: 500;
+    float: left;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    margin-top: 18px;
+}
+.vision {
+    text-align: center;
+    width: 306px;
+    position: absolute;
+    top: 180px;
+    left: 220px;
+    background: #fff;
+    border: 5px solid #3280c2;
+    padding: 22px;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+}
+.vision h3 {
+    font-size: 44px;
+    color: #252142;
+    font-weight: 800;
+}
+.vision p {
+    font-size: 23px;
+}
+.ceo-massage{
+	background-color: #F3F0CF;
+	padding-top: 60px;
+}
+.massage {
+    padding: 20px 44px;
+}
+.massage h2 {
+    font-size: 35px;
+    color: #3280c2;
+    font-weight: 400;
+    margin-bottom: -3px;
+}
+.massage p {
+    font-size: 20px;
+    color: #989797;
+}
+.massage hr {
+    width: 66px;
+    float: left;
+    border: 2px solid #3282c2;
+}
+.ceo-img img {
+    width: 100%;
+    margin-bottom: 70px;
+}
+.ceo-img {
+    padding: 0px 60px;
+}
+.ceo-img img {
+    width: 100%;
+    border: 5px solid #276698;
+    border-radius: 100%;
+}
+.visit{
+	background-image: url(../images/visit.webp);
+	background-size: 100% 100%;
+	padding: 6% 8% 0% 8%;
+}
+.visit-message {
+    background-color: #fff;
+    padding: 35px;
+    text-align: center;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    width: 500px;
+    margin-left: 40px;
+    box-shadow: 0 0 13px 1px #3282c2;
+}
+.visit-message h3 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0d4775;
+    border-bottom: 2px dotted #0d4775;
+    padding-bottom: 13px;
+}
+.visit-message p {
+    font-size: 20px;
+    color: #848481;
+}
+.visit-message button {
+    background: #3282c2;
+    border: #3282c2;
+    padding: 10px 22px;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    font-size: 17px;
+    font-weight: 600;
+}
+.baloon {
+    width: 200px;
+    position: absolute;
+    left: 0;
+    top: 250px;
+}
+.triangleShadow{
+	background-color: #f3f0cf;
+}
+#deco-clouds{
+	fill: #fff;
+	stroke: #fff;
+}
+.gall{
+	background-color: #f3f0cf;
+	text-align: center;
+	padding: 80px 100px 50px 100px;
+}
+.gall label{
+	background-color: #3282c2;
+    padding: 14px 45px;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 39px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    box-shadow: 2px 2px 4px 0px black;
+}
+.gall img {
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 250px;
+    box-shadow: 2px 2px 7px #736666;
+	border: 10px solid #1a5a8e;
+	transition: transform .5s ease;
+}
+.gall img:hover{
+	box-shadow: unset;
+	transition: transform .5s ease;
+	transform: scale(1.1);
+}
+.copy-right{
+    padding: 10px;
+    color: #fff;
+    border-top: 2px dotted;
+    text-align: center;
+}
+.footer{
+	background-color: #2b6da2;
+	padding: 20px 20px 0px 20px;
+}
+#footer-cloud {
+    fill: #2b6da2;
+    stroke: #2b6da2;
+    position: absolute;
+    z-index: 999;
+    margin-top: -98px;
+}
+.copy-right a {
+    color: aqua;
+}
+.opening h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 29px;
+    margin-bottom: 25px;
+}
+.opening span {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.right {
+    float: right;
+}
+.opening hr {
+    margin: 0;
+    border: 1px solid #fff;
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+.right button {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    background-color: #d12881;
+    border: #d12881;
+}
+.opening{
+	padding: 20px 30px 50px;
+}
+.contact-info li {
+    user-select: unset;
+    list-style: none;
+    color: #fff;
+    font-size: 15px;
+    line-height: 45px;
+    font-weight: 500;
+}
+.contact-info span {
+    font-weight: 500;
+    margin-right: 10px;
+    user-select: unset;
+}
+.contact-info ul {
+    padding: 0px;
+}
+.opening-con h2 {
+    color: #fff;
+    /*text-align: center;*/
+    font-size: 29px;
+    margin-bottom: 25px;
+}
+.opening-con{
+	padding: 20px 30px 50px;
+}
+.social {
+    text-align: center;
+    margin-top: 20px;
+}
+.social img {
+    margin-right: 23px;
+}
+.contact-info img {
+    width: 26px;
+}
+.main-contact img{
+	width: 100%;
+}
+.main-contact{
+	text-align: center;
+	padding: 150px;
+	background-image: url(../images/contact-us.jpg);
+}
+.main-contact label {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 4px 0px black;
+    background: #0097f2;
+    padding: 15px 60px;
+}
+.contact-us-info li{
+    list-style: none;
+    color: #fff;
+    font-size: 15px;
+    line-height: 45px;
+    font-weight: 500;
+    text-align: justify;
+}
+.contact-us-info img {
+    width: 26px;
+    margin-right: 10px;
+}
+.contact-us-info {
+    background: #0097f2;
+    margin-top: 65px;
+    padding: 25px 10px;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    border: 10px solid #2b6da2;
+    box-shadow: 3px 3px 12px #00000099;
+}
+.about-us-main{
+	background-image: url(../images/about.jpg);
+	background-size: 100% 100%;
+	padding: 10% 17% 25%;
+	margin-top: 60px;
+	text-align: center;
+}
+.about-us-main label{
+	text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 4px 0px black;
+    background: #0097f2;
+    padding: 15px 60px;
+}
+.our-main-mission{
+	padding: 4% 4% 4%;
+    background: #f3f0cf;
+    margin-top: -10px;
+}
+.mission-li {
+    padding: 0;
+}
+.mission-li li {
+    list-style: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    line-height: 2.5;
+}
+.mission-li li::before{
+	content: url(../images/black-dot.png);
+	margin-right: 7px;
+}
+#about-clouds{
+	fill: #F3F0CF;
+	stroke: #F3F0CF;
+	margin-top: -99px;
+}
+.our-main-mission label {
+    font-size: 41px;
+    font-weight: 600;
+    border-bottom: 2px solid #2b6da2;
+    color: #2b6da2;
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+.mission-img img {
+    width: 100%;
+    border: 10px solid #2b6da2;
+    box-shadow: 3px 3px 4px #5a5f63;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+}
+.butterfly {
+    position: absolute;
+    right: 0;
+    top: 210px;
+}
+.faqs{
+	background-image: url(../images/faq1.jpg);
+	background-size: 100% 100%;
+	padding: 8% 17% 33%;
+	margin-top: 60px;
+	text-align: center;
+}
+.faqs label{
+	text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 4px 0px black;
+    background: #0097f2;
+    padding: 15px 60px;
+}
+#faq-clouds{
+	fill: #e6e6e6;
+    stroke: #e6e6e6;
+    margin-top: -94px;
+}
+.main-faq{
+	background-color: #e6e6e6;
+	margin-top: -10px;
+	padding: 3% 5% 10%;
+}
+.main-faq h2 {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+}
+.main-faq p {
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.main-services{
+	background-image: url(../images/services.jpg);
+	background-size: 100% 100%;
+	padding: 13% 10% 25%;
+	text-align: center;
+}
+.main-services label{
+	text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 4px 0px black;
+    background: #0097f2;
+    padding: 15px 60px;
+}
+#service-clouds1{
+	fill: #eff4fa;
+	stroke: #eff4fa;
+	margin-top: -100px;
+}
+.our-services{
+	background-color: #eff4fa;
+	padding: 3% 10% 10%;
+	margin-top: -10px;
+}
+.our-services h2 {
+    font-size: 42px;
+    font-weight: 700;
+	text-align: center;
+    color: #19588a;
+    margin-bottom: 0px;
+}
+.our-services p {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 3px;
+    margin-bottom: 55px;
+}
+.best-services h3 {
+    font-size: 31px;
+    color: #19588a;
+    margin-bottom: 15px;
+}
+.best-services img {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 35px;
+    border: 8px solid #19588a;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    box-shadow: 4px 4px 7px #2b2c2d8f;
+}
+.curriculum{
+	text-align: center;
+	padding: 18% 10% 25%;
+	background-image: url(../images/sport.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.curriculum label {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 4px 0px black;
+    background: #0097f2;
+    padding: 15px 60px;
+}
+.education{
+	text-align: center;
+	padding: 10% 10% 35%;
+	background-image: url(../images/education.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.education label {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    border-radius: 225px 45px 325px 75px/15px 125px 35px 155px;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 4px 0px black;
+    background: #0097f2;
+    padding: 15px 60px;
+}
+.events {
+    background: #191d21;
+    padding: 6% 10%;
+}
+.events h2 {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 50px;
+}
+.events p {
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 4px;
+}
+.btn-link {
+    font-weight: 500;
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+}
+.btn-link:hover{
+    text-decoration: none;
+}
+.btn-link:focus{
+    text-decoration: none;
+}
+
+/*here we start our resposive design for mobile view*/
+
+@media only screen and (max-width: 600px) {
+  .navbar-brand img {
+        margin: 0px;
+        width: 214px;
+    }
+    .carousel-inner img{
+        margin-top: 0px;
+    }
+    .vision{
+        top: 157px;
+        left: 49px;
+        width: 260px;
+    }
+    .vision h3 {
+        font-size: 24px;
+    }
+    .vision p {
+        font-size: 15px;
+    }
+    .carousel-inner img{
+        height: 400px;
+    }
+    .massage {
+        padding: unset;
+    }
+    .massage h2 {
+        font-size: 27px;
+        font-weight: 500;
+    }
+    .massage p {
+        font-size: 13px;
+        color: #5f5858;
+    }
+    .hide {
+        display: none;
+    }
+    .visit-message{
+        width: unset;
+        margin-left: unset;
+        padding: 16px;
+        margin-bottom: 20px;
+    }
+    .visit-message h3 {
+        font-size: 20px;
+    }
+    .visit-message p {
+        font-size: 13px;
+    }
+    .baloon{
+        width: 102px;
+        top: 174px;
+    }
+    .home-service label{
+        padding: 14px 17px;
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    .about-img-abs {
+        width: 100%;
+    }
+    .about-back{
+        width: 100%
+    }
+    .home-service{
+        padding: 55px 25px 50px 0px;
+    }
+    .abo-text h2 {
+        font-size: 35px;
+        margin-top: 25px;
+    }
+    .abo-text{
+        padding: unset;
+    }
+    .abo-text p {
+        font-size: 13px;
+        text-align: justify;
+        color: #272626;
+    }
+    .gall{
+        padding: 30px 0px;
+    }
+    .footer-logo {
+        width: 100%;
+    }
+    .opening-con{
+        padding: unset;
+    }
+    .opening{
+        padding: unset;
+        margin: 20px 0px;
+    }
+    .opening span {
+        font-size: 14px;
+    }
+    .about-us-main label{
+        font-size: 25px;
+        padding: 15px 40px;
+    }
+    .mission-li li{
+        font-size: 13px;
+    }
+    .butterfly{
+        top: 122px;
+        width: 80px;
+    }
+    .curriculum label{
+        font-size: 25px;
+        padding: 15px 40px;
+    }
+    .curriculum{
+        padding: 37% 10% 25%;
+    }
+    .education label{
+        font-size: 25px;
+        padding: 15px 40px;
+    }
+    .education{
+        padding: 37% 10% 25%;
+    }
+    .main-services label{
+        font-size: 25px;
+        padding: 15px 39px;
+    }
+    .main-services{
+        padding: 37% 10% 25%;
+    }
+    .our-services h2{
+        font-size: 26px;
+    }
+    .our-services p{
+        margin-bottom: 21px;
+        letter-spacing: 2px;
+        font-size: 17px;
+    }
+    .best-services h3{
+        font-size: 19px;
+    }
+    .best-services img{
+        height: unset;
+    }
+    .main-contact label{
+        font-size: 25px;
+        padding: 15px 39px;
+    }
+    .main-contact{
+        padding: 37% 0% 25%;
+    }
+    .contact-us-info{
+        width: 290px;
+    }
+    .contact-us-info li{
+        font-size: 13px;
+    }
+    .top-ul-right{
+        display: none;
+    }
+    .top-ul-left{
+        margin-left: -20px;
+    }
+
+
+
+
+
+
+}
